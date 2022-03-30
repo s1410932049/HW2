@@ -1,10 +1,10 @@
 VERILOG = iverilog
-TARGET = blocking.vcd
-TEMP = blocking.vpp
-$(TARGET) : blocking.vvp
-	vvp blocking.vvp
-blocking.vvp: blocking_tb.v blocking.v
-	$(VERILOG) -o blocking.vvp blocking_tb.v blocking.v
+TARGET = nonblocking.vcd
+TEMP = nonblocking.vpp
+$(TARGET) : nonblocking.vvp
+	vvp nonblocking.vvp
+nonblocking.vvp: nonblocking_tb.v nonblocking.v
+	$(VERILOG) -o nonblocking.vvp nonblocking_tb.v nonblocking.v
 clean:
 	-del $(TARGET)
 	-del $(TEMP)
